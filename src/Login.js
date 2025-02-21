@@ -4,7 +4,7 @@ export default function Login(){
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-      fetch("https://mybackend-peach.vercel.app/api/login")
+      fetch("https://backend-eta-peach.vercel.app/api/login")
         .then((res) => res.json())
         .then((data) => setMessage(data.password))
         .catch((err) => console.error(err));

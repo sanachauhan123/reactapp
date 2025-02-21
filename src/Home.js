@@ -4,10 +4,15 @@ export default function Home(){
      const [message, setMessage] = useState("");
     
         useEffect(() => {
-          fetch("https://mybackend-peach.vercel.app/api/")
-            .then((res) => res.json())
-            .then((data) => setMessage(data.message))
-            .catch((err) => console.error(err));
+          fetch("https://backend-eta-peach.vercel.app/api", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            }
+          })
+            .then(response => response.json())
+            .then(data => setMessage(data))
+            .catch(error => console.error("Error:", error));
         }, []);
     return(
 <div>
